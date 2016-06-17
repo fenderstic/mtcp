@@ -1,0 +1,7 @@
+1. Introduction
+ This is a private project to understand TCP and optimizing techniques. Insertion comments are only what I will do.
+
+2. Useful tools
+  1) ctags : ctags -R .
+  2) cscope : mkcscope.sh and cscope
+  3) VIM : vundle, taglist
