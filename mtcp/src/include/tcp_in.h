@@ -41,6 +41,7 @@
 #define TCP_SEQ_BETWEEN(a,b,c)	(TCP_SEQ_GEQ(a,b) && TCP_SEQ_LEQ(a,c))
 
 /* convert timeval to timestamp (precision: 1 ms) */
+// HONESTCHOI thought tick is slightly rough, isn's it? 
 #define HZ						1000
 #define TIME_TICK				(1000000/HZ)		// in us
 #define TIMEVAL_TO_TS(t)		(uint32_t)((t)->tv_sec * HZ + \

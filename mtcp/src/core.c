@@ -1394,6 +1394,7 @@ mtcp_init(char *config_file)
 		sigint_cnt[i] = 0;
 	}
 
+	// HONESTCHOI found 'ParseConfiguration' reads configuration, but nothing with window, sadly.
 	ret = LoadConfiguration(config_file);
 	if (ret) {
 		TRACE_CONFIG("Error occured while loading configuration.\n");

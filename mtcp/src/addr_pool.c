@@ -51,7 +51,7 @@ CreateAddressPool(in_addr_t addr_base, int num_addr)
 		return NULL;
 
 	/* initialize address pool */
-	num_entry = num_addr * (MAX_PORT - MIN_PORT);
+	num_entry = num_addr * (MAX_PORT - MIN_PORT); // TODO : HONESTCHOI does not understand a number of entry. Why does an address needs entire ports?
 	ap->pool = (struct addr_entry *)calloc(num_entry, sizeof(struct addr_entry));
 	if (!ap->pool) {
 		free(ap);

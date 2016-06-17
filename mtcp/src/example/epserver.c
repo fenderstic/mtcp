@@ -589,7 +589,7 @@ main(int argc, char **argv)
 			 * before mtcp_init() is called. You can
 			 * not set core_limit after mtcp_init()
 			 */
-			mtcp_getconf(&mcfg);
+			mtcp_getconf(&mcfg); // TODO 0617 : HONESTCHOI does not see where this configuration is parsed.
 			mcfg.num_cores = core_limit;
 			mtcp_setconf(&mcfg);
 			break;
@@ -640,6 +640,7 @@ main(int argc, char **argv)
 			continue;
 		}
 
+		// HONESTCHOI thought that there should have been read limitation.
 		TRACE_INFO("Reading %s (%lu bytes)\n", 
 				fcache[nfiles].name, fcache[nfiles].size);
 		total_read = 0;
