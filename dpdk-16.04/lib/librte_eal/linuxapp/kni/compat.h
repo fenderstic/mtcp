@@ -2,6 +2,8 @@
  * Minimal wrappers to allow compiling kni on older kernels.
  */
 
+#include <linux/version.h>
+
 #ifndef RHEL_RELEASE_VERSION
 #define RHEL_RELEASE_VERSION(a, b) (((a) << 8) + (b))
 #endif
@@ -27,3 +29,11 @@
 #if ( LINUX_VERSION_CODE < KERNEL_VERSION(4,1,0) )
 #define HAVE_KIOCB_MSG_PARAM
 #endif /* < 4.1.0 */
+
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(4, 7, 0)
+#define HAVE_TRANS_START_HELPER
+#endif
+
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(4, 11, 0)
+#define HAVE_SIGNAL_FUNCTIONS_OWN_HEADER
+#endif
